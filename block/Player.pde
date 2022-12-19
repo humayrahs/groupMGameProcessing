@@ -19,7 +19,7 @@ class Player {
     boolean inBounds = checkBounds();
     //println("movePlayer(): inBounds after checkBounds() == " + inBounds);
 
-    while(inBounds==false){
+    while(inBounds==false){ //should be true for readability (in bounds yes, move in bounds no, dont move) will swap later
       if (keyPressed) {
         if (key == 'd') {
           xPos += movSpeed;
