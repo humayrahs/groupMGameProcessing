@@ -2,8 +2,9 @@
 color bgColour = #E5FFA5;
 
   //init player//
-int playerSize = 50; //FULL SIZE, centre rect mode half left and half right
+int playerSize = 50; //no = FULL SIZE as rectMode is CENTER
 int initPos = playerSize/2;
+float movSpeed = 3;
 Player p = new Player(initPos, initPos, playerSize, playerSize);
 
 void setup() {
@@ -14,8 +15,6 @@ void setup() {
 void draw() {
   background(bgColour);
   
-  println("draw(): calling to draw Player p...");
   p.drawPlayer();
   p.movePlayer();
-  
 }

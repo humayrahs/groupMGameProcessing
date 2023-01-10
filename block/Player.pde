@@ -8,18 +8,14 @@ class Player {
     this.xSize = xSize;
     this.ySize = ySize;
   }
-  void drawPlayer() {
+  void drawPlayer() {  
     println("drawPlayer(): drawing player...");
     rectMode(CENTER);
     fill(100, 0, 100);
     rect(xPos, yPos, xSize, ySize);
   }
   void movePlayer() {
-    float movSpeed = 1;
-    boolean inBounds = checkBounds();
-    //println("movePlayer(): inBounds after checkBounds() == " + inBounds);
-
-    while(inBounds==false){
+    checkBoundsOf(0,0,width,height);  //check bounds of window
       if (keyPressed) {
         if (key == 'd') {
           xPos += movSpeed;
@@ -31,25 +27,26 @@ class Player {
           yPos-=movSpeed;
         }
       }
-    }
     
   }
-  boolean checkBounds() {
-    int lB = int(xPos)-xSize/2;  //to make if statement shorter
+  void checkBoundsOf(int x, int y, int w, int h) {
+    //PLAYER BOUNDARIES
+    int lB = int(xPos)-xSize/2;
     int rB = int(xPos)+xSize/2;
     int uB = int(yPos)-ySize/2;
     int dB = int(yPos)+ySize/2;
-    //println("checkBounds():\nlB = " + lB + "\nrB = " + rB + "\nuB = " + uB + "\ndB = " + dB);
-    boolean inBounds;
-    if ((lB>=0 & rB<=width) & (uB>=0  &  dB<=height)) {  //your x-size > 0, x+size<width, y+size<height, y-size>0
-      //println("checkBounds(): if statement check 1");
-      inBounds = false;
-    }else{
-      //println("checkBounds(): if statement check 2");
-      inBounds = true;
+   
+    if(lB<x){
+     xPos+=movSpeed; 
     }
-    
-    //println("checkBounds(): Finished the if statement, returing inBounds: " + inBounds);
-    return inBounds;
+    if(rB>width){
+     xPos-=movSpeed; 
+    }
+    if(uB<0){
+     yPos+=movSpeed; 
+    }
+    if(dB>height){
+     yPos-=movSpeed; 
+    }
   }
 }
