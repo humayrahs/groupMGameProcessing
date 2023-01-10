@@ -15,7 +15,15 @@ class Player {
     rect(xPos, yPos, xSize, ySize);
   }
   void movePlayer() {
+<<<<<<< HEAD
     checkBoundsOf(0,0,width,height);  //check bounds of window
+=======
+    float movSpeed = 1;
+    boolean inBounds = checkBounds();
+    //println("movePlayer(): inBounds after checkBounds() == " + inBounds);
+
+    while(inBounds==false){ //should be true for readability (in bounds yes, move in bounds no, dont move) will swap later
+>>>>>>> a8bb1168511a7ec0f991227419625685b682572e
       if (keyPressed) {
         if (key == 'd') {
           xPos += movSpeed;
