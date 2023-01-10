@@ -14,7 +14,7 @@ class Player {
     rect(xPos, yPos, xSize, ySize);
   }
   void movePlayer() {
-    checkBoundsOf(0,0,width,height);  //check bounds of window
+    keepIn(0,0,width,height);  //check bounds of window
    
       if (keyPressed) {
         if (key == 'd') {
@@ -29,7 +29,7 @@ class Player {
       }
     
   }
-  void checkBoundsOf(int x, int y, int w, int h) {
+  void keepIn(int x, int y, int w, int h) {
     //PLAYER BOUNDARIES
     int lB = int(xPos)-xSize/2;
     int rB = int(xPos)+xSize/2;
@@ -37,7 +37,7 @@ class Player {
     int dB = int(yPos)+ySize/2;
     
     
-    //keeps things within an object
+    //keeps things within a specified boundary
     if(lB<x){
      xPos+=movSpeed; 
     }
@@ -51,6 +51,6 @@ class Player {
      yPos-=movSpeed; 
     }
     
-   //keeps thing outsied an object 
+   //keeps thing outside a specified boundary
   }
 }

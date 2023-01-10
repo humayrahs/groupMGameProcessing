@@ -1,15 +1,16 @@
-Freedom (Processing)
+# Freedom (Processing)
 
-1. block on screen
-move block with wasd||udlr
-block hits collisions with other blocks
+##To Do
+- draw obstacle
+- keep character outside of obstacle
+- distinguish interactable obstacle types - give item or give description
+- find out how to keep my file changes T_T
 
-2. collision class
-collision made any xy with same properties of no block pass
-create first level with collision class and block movement
+##Done
+- draw character
+- move character with keys
+- keep character within window
 
----
->>BEGIN GAME<<
-Mechanics:
-Interact with collision (or place interact objects over collision)
-Inventory
+##BEGIN GAME
+
+##MECHANICS
