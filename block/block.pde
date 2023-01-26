@@ -4,7 +4,6 @@ color bgColour = #E5FFA5;
   //init player//
 int playerSize = 50; //no = FULL SIZE as rectMode is CENTER
 int initPos = playerSize/2;
-float movSpeed = 3;
 Player p = new Player(initPos, initPos, playerSize, playerSize);
 
 void setup() {

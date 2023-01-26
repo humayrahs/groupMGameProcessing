@@ -1,6 +1,7 @@
 # Freedom (Processing)
 
 ## To Do
+- for 27/01/2023 - use Rectangle collision detection& collision detection with moving objets etc... from https://happycoding.io/tutorials/processing/collision-detection 
 - draw obstacle
 - keep character outside of obstacle
 - distinguish interactable obstacle types - give item or give description
